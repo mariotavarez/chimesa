@@ -81,6 +81,22 @@ export const routes: Routes = [
       {
         path: 'widgets',
         loadChildren: './views/widgets/widgets.module#WidgetsModule'
+      },
+      {
+        path: 'perfiles',
+        loadChildren: './views/perfiles/perfiles.module#PerfilesModule'
+      },
+      {
+        path: 'sucursales',
+        loadChildren: './views/sucursales/sucursales.module#SucursalesModule'
+      },
+      {
+        path: 'empleados',
+        loadChildren: './views/empleados/empleados.module#EmpleadosModule'
+      },
+      {
+        path: 'conceptos',
+        loadChildren: './views/conceptos/conceptos.module#ConceptosModule'
       }
     ]
   },
