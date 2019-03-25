@@ -42,7 +42,7 @@ export const navItems: NavData[] = [
   {
     name: 'Perfiles',
     url: '/perfiles',
-    icon: 'icon-drop'
+    icon: 'fa fa-id-badge'
   },
   {
     title: true,
@@ -51,7 +51,7 @@ export const navItems: NavData[] = [
   {
     name: 'Sucursales',
     url: '/sucursales',
-    icon: 'icon-drop'
+    icon: 'fa fa-shopping-cart'
   },
   {
     title: true,
@@ -60,7 +60,7 @@ export const navItems: NavData[] = [
   {
     name: 'Empleados',
     url: '/empleados',
-    icon: 'icon-drop'
+    icon: 'icon-people'
   },
   {
     title: true,
@@ -69,6 +69,6 @@ export const navItems: NavData[] = [
   {
     name: 'Conceptos',
     url: '/conceptos',
-    icon: 'icon-drop'
+    icon: 'icon-briefcase'
   },
 ];

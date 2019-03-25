@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-body">
+        <div class="card-header">
           <div class="row">
             <div class="col-sm-5">
-              <h4 class="card-title mb-0">Detalle del empleado</h4>
+              <h5 class="card-title mb-0">Detalle del empleado</h5>
             </div>
 
-            <div class="col-sm-7 d-none d-md-block">
+            <div class="col-sm-7 d-md-block">
               <button class="btn btn-danger float-right text-white ml-2" type="button">
                 Borrar
               </button>
@@ -23,42 +23,132 @@
             </div>
 
           </div>
-          <div class="row mt-4">
-            <div class="col-md-6">
-              <form action="" method="post">
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row mt-3">
+              <div class="col-md-6">
                 <div class="form-group">
-                  <label for="nombrePerfil">Nombre del perfil</label>
+                  <label for="nombre">Nombre del empleado</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-user"></i></span>
                     </div>
-                    <input type="text" id="nombrePerfil" name="nombrePerfil" class="form-control"
-                      placeholder="Nombre del perfil">
+                    <input disabled type="text" id="nombre" name="nombre" class="form-control">
                   </div>
                 </div>
-                <div class="form-groupo">
-                  <label for="nombrePerfil" class="mt-3">Permisos</label>
-                  <div class="form-group row">
-                    <label class="col-md-3 col-form-label">Ventas</label>
-                    <div class="col-md-9 col-form-label">
-                      <div class="form-check form-check-inline mr-1">
-                        <input class="form-check-input" type="checkbox" id="inline-checkbox1" value="option1">
-                        <label class="form-check-label" for="inline-checkbox1">Autorizaciones</label>
-                      </div>
-                      <div class="form-check form-check-inline mr-1">
-                        <input class="form-check-input" type="checkbox" id="inline-checkbox2" value="option2">
-                        <label class="form-check-label" for="inline-checkbox2">Control</label>
-                      </div>
-                      <div class="form-check form-check-inline mr-1">
-                        <input class="form-check-input" type="checkbox" id="inline-checkbox3" value="option3">
-                        <label class="form-check-label" for="inline-checkbox3">Reportes</label>
-                      </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="perfil">Perfil</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-id-badge"></i></span>
                     </div>
+                    <input disabled type="text" id="perfil" name="perfil" class="form-control">
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
-          </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="sucursal">Sucursal</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
+                    </div>
+                    <input disabled type="text" id="sucursal" name="sucursal" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="status">Estatus</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-list-alt"></i></span>
+                    </div>
+                    <input disabled type="text" id="status" name="status" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                    </div>
+                    <input disabled type="text" id="telefono" name="telefono" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="correo">Correo</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                    </div>
+                    <input disabled type="text" id="correo" name="correo" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="fechaDeIngreso">Fecha de ingreso</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <input disabled type="date" id="fechaDeIngreso" name="fechaDeIngreso" class="form-control"
+                      value="2019-03-25">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="fechaDeBaja">Fecha de baja</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <input disabled type="date" id="fechaDeBaja" name="fechaDeBaja" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="clientes">Clientes</label>
+                  <table class="table table-responsive-lg table-hover table-outline table-sm">
+                    <thead class="thead-light">
+                      <tr>
+                        <th style="width: 5%">#</th>
+                        <th>Nombre</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Kellogg Company México, S. De R.l. De C.v</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Pilgrims COmpany México, S. De R.l. De C.v</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -76,44 +166,119 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="row">
-          <div class="col-md-6">
-            <form action="" method="post">
+        <form>
+          <div class="row">
+            <div class="col-md-6">
               <div class="form-group">
-                <label for="nombrePerfil">Nombre del perfil</label>
+                <label for="nombre">Nombre del empleado</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                   </div>
-                  <input type="text" id="nombrePerfil" name="nombrePerfil" class="form-control"
-                    placeholder="Ingrese el nombre del perfil">
-                </div>
-                <label for="nombrePerfil" class="mt-3">Permisos</label>
-                <div class="form-group row">
-                  <label class="col-md-2 col-form-label">Ventas</label>
-                  <div class="col-md-9 col-form-label">
-                    <div class="form-check form-check-inline mr-1">
-                      <input class="form-check-input" type="checkbox" id="inline-checkbox1" value="option1">
-                      <label class="form-check-label" for="inline-checkbox1">Autorizaciones</label>
-                    </div>
-                    <div class="form-check form-check-inline mr-1">
-                      <input class="form-check-input" type="checkbox" id="inline-checkbox2" value="option2">
-                      <label class="form-check-label" for="inline-checkbox2">Control</label>
-                    </div>
-                    <div class="form-check form-check-inline mr-1">
-                      <input class="form-check-input" type="checkbox" id="inline-checkbox3" value="option3">
-                      <label class="form-check-label" for="inline-checkbox3">Reportes</label>
-                    </div>
-                  </div>
+                  <input type="text" id="nombre" name="nombre" class="form-control">
                 </div>
               </div>
-            </form>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="perfil">Perfil</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-id-badge"></i></span>
+                  </div>
+                  <select id="perfil" name="perfil" class="form-control">
+                    <option value="0">Vendedor</option>
+                    <option value="1">Comprador</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="sucursal">Sucursal</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
+                  </div>
+                  <select id="sucursal" name="sucursal" class="form-control">
+                    <option value="0">Seleccione una sucursal</option>
+                    <option value="0">Chimesa León</option>
+                    <option value="1">Chimesa Querétaro</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                  </div>
+                  <input type="tel" id="telefono" name="telefono" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="correo">Correo</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                  </div>
+                  <input type="e" id="correo" name="correo" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="clientes">Clientes</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-users"></i></span>
+                  </div>
+                  <select id="clientes" name="clientes" class="form-control">
+                    <option value="0">Seleccione un cliente</option>
+                    <option value="0">Kellogs</option>
+                    <option value="1">Pilgrims</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="fechaDeIngreso">Fecha de ingreso</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                  </div>
+                  <input type="date" id="fechaDeIngreso" name="fechaDeIngreso" class="form-control" value="2019-03-25">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="fechaDeBaja">Fecha de baja</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                  </div>
+                  <input type="date" id="fechaDeBaja" name="fechaDeBaja" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="empleadosModal.hide()">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
+        <button type="button" class="btn btn-danger" (click)="empleadosModal.hide()">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="empleadosModal.hide()">Guardar cambios</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
