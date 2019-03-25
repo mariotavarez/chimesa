@@ -16,7 +16,7 @@ const routes: Routes = [
     component: PerfilesComponent
   },
   {
-    path: 'perfil-detalle',
+    path: 'perfil-detalle/:id',
     data: {
       title: 'Detalle del Perfil'
     },

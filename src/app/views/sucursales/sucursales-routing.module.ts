@@ -16,7 +16,7 @@ const routes: Routes = [
     component: SucursalesComponent
   },
   {
-    path: 'sucursal-detalle',
+    path: 'sucursal-detalle/:id',
     data: {
       title: 'Detalle de la sucursal'
     },

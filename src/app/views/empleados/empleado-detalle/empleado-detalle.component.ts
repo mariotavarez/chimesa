@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {ModalDirective} from 'ngx-bootstrap/modal';
+
+// Navigation
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
 
 @Component({
   selector: 'app-empleado-detalle',
@@ -7,9 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpleadoDetalleComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('myModal') public myModal: ModalDirective;
+  @ViewChild('empleadosModal') public perfilModal: ModalDirective;
+ 
+  constructor( private activeRoute: ActivatedRoute ) { }
 
   ngOnInit() {
+    console.log(this.activeRoute.snapshot.paramMap.get('id'));
   }
 
 }

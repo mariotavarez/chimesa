@@ -1,3 +1,120 @@
-<p>
-  concepto-detalle works!
-</p>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-5">
+              <h4 class="card-title mb-0">Detalle del concepto</h4>
+            </div>
+
+            <div class="col-sm-7 d-none d-md-block">
+              <button class="btn btn-danger float-right text-white ml-2" type="button">
+                Borrar
+              </button>
+              <button class="btn btn-warning float-right text-white ml-2" type="button" data-toggle="modal"
+                (click)="conceptoModal.show()">
+                Editar
+              </button>
+              <button class="btn btn-primary float-right text-white" type="button" data-toggle="modal"
+                [routerLink]="['/conceptos']">
+                Regresar
+              </button>
+            </div>
+
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <form action="" method="post">
+                <div class="form-group">
+                  <label for="nombrePerfil">Nombre del perfil</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" id="nombrePerfil" name="nombrePerfil" class="form-control"
+                      placeholder="Nombre del perfil">
+                  </div>
+                </div>
+                <div class="form-groupo">
+                  <label for="nombrePerfil" class="mt-3">Permisos</label>
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Ventas</label>
+                    <div class="col-md-9 col-form-label">
+                      <div class="form-check form-check-inline mr-1">
+                        <input class="form-check-input" type="checkbox" id="inline-checkbox1" value="option1">
+                        <label class="form-check-label" for="inline-checkbox1">Autorizaciones</label>
+                      </div>
+                      <div class="form-check form-check-inline mr-1">
+                        <input class="form-check-input" type="checkbox" id="inline-checkbox2" value="option2">
+                        <label class="form-check-label" for="inline-checkbox2">Control</label>
+                      </div>
+                      <div class="form-check form-check-inline mr-1">
+                        <input class="form-check-input" type="checkbox" id="inline-checkbox3" value="option3">
+                        <label class="form-check-label" for="inline-checkbox3">Reportes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #conceptoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Concepto</h4>
+        <button type="button" class="close" (click)="conceptoModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <form action="" method="post">
+              <div class="form-group">
+                <label for="nombrePerfil">Nombre del perfil</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                  </div>
+                  <input type="text" id="nombrePerfil" name="nombrePerfil" class="form-control"
+                    placeholder="Ingrese el nombre del perfil">
+                </div>
+                <label for="nombrePerfil" class="mt-3">Permisos</label>
+                <div class="form-group row">
+                  <label class="col-md-2 col-form-label">Ventas</label>
+                  <div class="col-md-9 col-form-label">
+                    <div class="form-check form-check-inline mr-1">
+                      <input class="form-check-input" type="checkbox" id="inline-checkbox1" value="option1">
+                      <label class="form-check-label" for="inline-checkbox1">Autorizaciones</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-1">
+                      <input class="form-check-input" type="checkbox" id="inline-checkbox2" value="option2">
+                      <label class="form-check-label" for="inline-checkbox2">Control</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-1">
+                      <input class="form-check-input" type="checkbox" id="inline-checkbox3" value="option3">
+                      <label class="form-check-label" for="inline-checkbox3">Reportes</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="conceptoModal.hide()">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

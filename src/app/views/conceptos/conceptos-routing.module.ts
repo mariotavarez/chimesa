@@ -16,7 +16,7 @@ const routes: Routes = [
     component: ConceptosComponent
   },
   {
-    path: 'concepto-detalle',
+    path: 'concepto-detalle/:id',
     data: {
       title: 'Detalle del concepto'
     },

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {ModalDirective} from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-sucursales',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SucursalesComponent implements OnInit {
 
+  @ViewChild('myModal') public myModal: ModalDirective;
+  @ViewChild('sucursalModal') public perfilModal: ModalDirective;
   constructor() { }
 
   ngOnInit() {

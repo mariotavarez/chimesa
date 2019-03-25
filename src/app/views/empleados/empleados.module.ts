@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// Alert Component
+import { AlertModule } from 'ngx-bootstrap/alert';
+
+// Modal Component
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 // Componente Padre
 import { EmpleadosComponent } from './empleados.component';
 
@@ -17,7 +23,9 @@ import { EmpleadosRoutingModule } from './empleados-routing.module';
   ],
   imports: [
     CommonModule,
-    EmpleadosRoutingModule
+    EmpleadosRoutingModule,
+    AlertModule.forRoot(),
+    ModalModule.forRoot()
   ]
 })
 export class EmpleadosModule { }

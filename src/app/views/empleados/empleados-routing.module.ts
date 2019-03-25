@@ -16,7 +16,7 @@ const routes: Routes = [
     component: EmpleadosComponent
   },
   {
-    path: 'empleado-detalle',
+    path: 'empleado-detalle/:id',
     data: {
       title: 'Detalle del empleado'
     },
