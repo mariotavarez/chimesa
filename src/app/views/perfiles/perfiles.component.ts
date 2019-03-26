@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {ModalDirective} from 'ngx-bootstrap/modal';
+
+// Interfaces
 import { PerfilesInterface } from '../../interfaces/perfiles.interface';
 
 // Forms
@@ -16,20 +18,26 @@ export class PerfilesComponent implements OnInit {
   @ViewChild('myModal') public myModal: ModalDirective;
   @ViewChild('perfilModal') public perfilModal: ModalDirective;
 
-  // Perfil Interface para doble binding
+  // Perfil Interface que se utilizara para el biding del formulario
   public perfil: PerfilesInterface = {
     id$: '',
     nombre: ''
   };
 
+  // Para realizar las validaciones del formulario de perfiles
   formPerfil: FormGroup;
 
   constructor() {
+    // Inicializa las validaciones
     this.formPerfil = new FormGroup({
-      'nombre': new FormControl('Spiderman'),
-      'apellido': new FormControl('Spiderman'),
-      'correo': new FormControl('Spiderman'),
+      'id$': new FormControl(''),
+      'nombre': new FormControl(this.perfil.nombre, [Validators.required, Validators.minLength(3)])
     });
+
+    // Setear la informacion en los campos
+    this.formPerfil.setValue(this.perfil);
+
+
   }
 
   ngOnInit() {
@@ -39,5 +47,7 @@ export class PerfilesComponent implements OnInit {
     // console.log(`${this.perfil.nombre}`);
     console.log(this.formPerfil.value);
     console.log(this.formPerfil);
+
+    this.formPerfil.reset(this.perfil);
   }
 }

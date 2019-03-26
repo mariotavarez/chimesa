@@ -16,6 +16,9 @@ import { SucursalDetalleComponent } from './sucursal-detalle/sucursal-detalle.co
 // Rutas
 import { SucursalesRoutingModule } from './sucursales-routing.module';
 
+// Forms
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     SucursalesComponent,
@@ -24,6 +27,8 @@ import { SucursalesRoutingModule } from './sucursales-routing.module';
   imports: [
     CommonModule,
     SucursalesRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     AlertModule.forRoot(),
     ModalModule.forRoot()
   ]

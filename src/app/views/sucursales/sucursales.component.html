@@ -59,96 +59,123 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="nombre">Nombre de la sucursal</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
+        <div class="row">
+          <div class="col-md-12">
+            <form [formGroup]="formSucursales" (ngSubmit)="guardarSucursales()">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formSucursales.get('nombre').valid}">
+                    <label for="nombre">Nombre de la sucursal</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
+                      </div>
+                      <input type="text" id="nombre" name="nombre" class="form-control is-invalid"
+                        placeholder="Ingrese el nombre de la sucursal" formControlName='nombre'>
+                      <div class="invalid-feedback" *ngIf="formSucursales.controls['nombre'].errors?.required">
+                        El nombre de la sucursal es requerida
+                      </div>
+                    </div>
                   </div>
-                  <input type="text" id="nombre" name="nombre" class="form-control"
-                    placeholder="Ingrese el nombre de la sucursal">
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <div class="input-group" [ngClass]="{ 'was-validated': formSucursales.get('telefono').valid}">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                      </div>
+                      <input type="text" id="telefono" name="telefono" class="form-control is-invalid"
+                      placeholder="Ingrese el número de teléfono" formControlName='telefono'>
+                      <div class="invalid-feedback" *ngIf="formSucursales.controls['telefono'].errors?.required">
+                        El teléfono es requerido
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formSucursales.get('correo').valid }">
+                    <label for="correo">Correo</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                      </div>
+                      <input type="text" id="correo" name="correo" class="form-control is-invalid"
+                        placeholder="Ingrese el correo electrónico" formControlName='correo'>
+                      <div class="invalid-feedback" *ngIf="formSucursales.controls['correo'].errors?.required">
+                          El correo es requerido
+                      </div>
+                      <div class="invalid-feedback" *ngIf="formSucursales.controls['correo'].errors?.pattern">
+                          El correo no tiene el formato correcto
+                      </div>
+                    </div>
                   </div>
-                  <input type="text" id="telefono" name="telefono" class="form-control"
-                    placeholder="Ingrese el número de teléfono">
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formSucursales.get('responsable').valid }">
+                    <label for="responsable">Responsable</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                      </div>
+                      <select id="responsable" name="responsable" class="custom-select is-invalid" formControlName='responsable'>
+                        <option value="">Seleccione un responsable</option>
+                        <option value="Juan Perez">Juan Pérez</option>
+                        <option value="Roberto Lopez">Roberto López</option>
+                      </select>
+                      <div class="invalid-feedback" *ngIf="formSucursales.controls['responsable'].errors?.validaSelect">
+                          Seleccione a un responsable
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formSucursales.get('status').valid }">
+                    <label for="status">Estatus</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-list-alt"></i></span>
+                      </div>
+                      <select id="status" name="status" class="custom-select is-invalid" formControlName='status'>
+                        <option value="">Seleccione el tipo de estatus</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                      </select>
+                      <div class="invalid-feedback" *ngIf="formSucursales.controls['status'].errors?.validarStatus">
+                          Seleccione un estatus
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formSucursales.get('direccion').valid }">
+                    <label for="direccion">Dirección</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                      </div>
+                      <textarea class="form-control is-invalid" id="direccion" name="direccion" rows="2"
+                        placeholder="Dirección" formControlName='direccion'></textarea>
+                      <div class="invalid-feedback" *ngIf="formSucursales.controls['direccion'].errors?.required">
+                          La dirección es requerida
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {{ formSucursales.valid}}
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="sucursalModal.hide()">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Agregar perfil</button>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+              </div>
+            </form>
           </div>
-          <div class="row mt-3">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="correo">Correo</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                  </div>
-                  <input type="email" id="correo" name="correo" class="form-control"
-                    placeholder="Ingrese el correo electrónico">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="responsable">Responsable</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-user"></i></span>
-                  </div>
-                  <select id="responsable" name="responsable" class="form-control">
-                    <option value="0">Juan Pérez</option>
-                    <option value="1">Roberto López</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="status">Estatus</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-list-alt"></i></span>
-                  </div>
-                  <select id="status" name="status" class="form-control">
-                    <option value="0">Seleccione el tipo de estatus</option>
-                    <option value="0">Activo</option>
-                    <option value="1">Inactivo</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="direccion">Dirección</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
-                  </div>
-                  <textarea class="form-control" id="direccion" name="direccion" rows="2"
-                    placeholder="Dirección"></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="sucursalModal.hide()">Cerrar</button>
-        <button type="button" class="btn btn-primary">Agregar perfil</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
+        </div>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

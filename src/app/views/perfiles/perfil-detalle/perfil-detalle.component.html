@@ -34,8 +34,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-user"></i></span>
                     </div>
-                    <input type="text" id="nombrePerfil" name="nombrePerfil" class="form-control"
-                      placeholder="Nombre del perfil">
+                    <input type="text" id="nombrePerfil" name="nombrePerfil" class="form-control" disabled>
                   </div>
                 </div>
               </div>
@@ -56,15 +55,15 @@
                       <div class="form-group row">
                         <div class="col-md-9 col-form-label">
                           <div class="form-check form-check-inline mr-1">
-                            <input class="form-check-input" type="checkbox" id="inline-checkbox1" value="option1">
+                            <input class="form-check-input" type="checkbox" id="inline-checkbox1" value="option1" disabled>
                             <label class="form-check-label" for="inline-checkbox1">Autorizaciones</label>
                           </div>
                           <div class="form-check form-check-inline mr-1">
-                            <input class="form-check-input" type="checkbox" id="inline-checkbox2" value="option2">
+                            <input class="form-check-input" type="checkbox" id="inline-checkbox2" value="option2" disabled>
                             <label class="form-check-label" for="inline-checkbox2">Control</label>
                           </div>
                           <div class="form-check form-check-inline mr-1">
-                            <input class="form-check-input" type="checkbox" id="inline-checkbox3" value="option3">
+                            <input class="form-check-input" type="checkbox" id="inline-checkbox3" value="option3" disabled>
                             <label class="form-check-label" for="inline-checkbox3">Reportes</label>
                           </div>
                         </div>
@@ -83,15 +82,15 @@
                       <div class="form-group row">
                         <div class="col-md-9 col-form-label">
                           <div class="form-check form-check-inline mr-1">
-                            <input class="form-check-input" type="checkbox" id="inline-checkbox1" value="option1">
+                            <input class="form-check-input" type="checkbox" id="inline-checkbox1" value="option1" disabled>
                             <label class="form-check-label" for="inline-checkbox1">Autorizaciones</label>
                           </div>
                           <div class="form-check form-check-inline mr-1">
-                            <input class="form-check-input" type="checkbox" id="inline-checkbox2" value="option2">
+                            <input class="form-check-input" type="checkbox" id="inline-checkbox2" value="option2" disabled>
                             <label class="form-check-label" for="inline-checkbox2">Pago a proveedor</label>
                           </div>
                           <div class="form-check form-check-inline mr-1">
-                            <input class="form-check-input" type="checkbox" id="inline-checkbox3" value="option3">
+                            <input class="form-check-input" type="checkbox" id="inline-checkbox3" value="option3" disabled>
                             <label class="form-check-label" for="inline-checkbox3">Reportes</label>
                           </div>
                         </div>
@@ -119,17 +118,21 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <!-- form start -->
+        <form [formGroup]="formPerfil" (ngSubmit)="guardarPerfil()">
           <div class="row">
             <div class="col-md-12">
-              <div class="form-group">
+              <div class="form-group" [ngClass]="{ 'was-validated': formPerfil.get('nombre').valid}">
                 <label for="nombrePerfil">Nombre del perfil</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                   </div>
-                  <input type="text" id="nombrePerfil" name="nombrePerfil" class="form-control"
-                    placeholder="Ingrese el nombre del perfil">
+                  <input type="text" id="nombrePerfil" name="nombrePerfil" class="form-control is-invalid"
+                    placeholder="Ingrese el nombre del perfil" formControlName="nombre">
+                  <div class="invalid-feedback" *ngIf="formPerfil.controls['nombre'].errors?.required">
+                    El nombre del perfil es requerido
+                  </div>
                 </div>
               </div>
             </div>
@@ -191,6 +194,7 @@
             </div>
           </div>
         </form>
+        <!-- end form -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" (click)="perfilModal.hide()">Cerrar</button>

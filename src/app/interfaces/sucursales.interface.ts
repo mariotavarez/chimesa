@@ -3,7 +3,7 @@ export interface SucursalesInterface {
     nombre: string;
     telefono: string;
     direccion: string;
-    actualizacion: [
+    actualizacion?: [
         {
             fecha?: Date,
             usuario?: string

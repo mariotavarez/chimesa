@@ -1,17 +1,17 @@
 export interface EmpleadosInterface {
     id$?: string;
     nombre: string;
-    idPerfil: string;
-    idSucursal: string;
+    perfil: string;
+    sucursal: string;
     telefono: string;
     correo: string;
-    clientes: [];
+    clientes?: [];
     status: string;
-    fechaDeIngreso: Date;
-    actualizacion: [{
-        fecha?: Date,
+    fechaDeIngreso: string;
+    fechaDeBaja: string;
+    actualizacion?: [{
+        fecha?: string,
         usuario?: string
     }];
-    fechaDeBaja: Date;
 
 }

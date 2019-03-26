@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DatePipe } from '@angular/common'
 
 // Alert Component
 import { AlertModule } from 'ngx-bootstrap/alert';
@@ -16,6 +17,10 @@ import { EmpleadoDetalleComponent } from './empleado-detalle/empleado-detalle.co
 // Rutas
 import { EmpleadosRoutingModule } from './empleados-routing.module';
 
+// Forms
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     EmpleadosComponent,
@@ -24,8 +29,13 @@ import { EmpleadosRoutingModule } from './empleados-routing.module';
   imports: [
     CommonModule,
     EmpleadosRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     AlertModule.forRoot(),
     ModalModule.forRoot()
+  ],
+  providers: [
+    DatePipe
   ]
 })
 export class EmpleadosModule { }

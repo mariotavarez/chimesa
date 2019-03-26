@@ -63,17 +63,22 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-md-12">
-            <form  (ngSubmit)="guardarPerfil()" [formGroup]="formPerfil" novalidate="novalidate">
+            <!-- form start -->
+            <form [formGroup]="formPerfil" (ngSubmit)="guardarPerfil()">
               <div class="row">
                 <div class="col-md-12">
-                  <div class="form-group">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formPerfil.get('nombre').valid}">
                     <label for="nombre">Nombre del perfil</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                       </div>
-                      <input type="text" id="nombre" name="nombre" class="form-control"
+                      <input type="text" id="nombre" name="nombre" class="form-control is-invalid"
                         placeholder="Nombre del perfil" formControlName="nombre">
+                      <div class="invalid-feedback"
+                           *ngIf="formPerfil.controls['nombre'].errors?.required" >
+                        El nombre del perfil es requerido
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -144,7 +149,9 @@
                 <button type="submit" class="btn btn-primary">Agregar perfil</button>
                 <button type="submit" class="btn btn-primary">Guardar cambios</button>
               </div>
+              {{ formPerfil.valid }}
             </form>
+            <!-- end form -->
           </div>
         </div>
       </div>

@@ -58,120 +58,162 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="nombre">Nombre del empleado</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+        <div class="row">
+          <div class="col-md-12">
+            <form [formGroup]="formEmpleados" (ngSubmit)="guardarEmpleados()">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formEmpleados.get('nombre').valid}">
+                    <label for="nombre">Nombre del empleado</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                      </div>
+                      <input type="text" id="nombre" name="nombre"
+                             class="form-control is-invalid" formControlName="nombre">
+                      <div class="invalid-feedback" *ngIf="formEmpleados.controls['nombre'].errors?.required">
+                          El nombre del empleado es requerido
+                      </div>
+                    </div>
                   </div>
-                  <input type="text" id="nombre" name="nombre" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formEmpleados.get('perfil').valid}">
+                    <label for="perfil">Perfil</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-id-badge"></i></span>
+                      </div>
+                      <select id="perfil" name="perfil" class="custom-select is-invalid"
+                              formControlName="perfil">
+                        <option value="">Seleccione un perfil</option>
+                        <option value="0">Vendedor</option>
+                        <option value="1">Comprador</option>
+                      </select>
+                      <div class="invalid-feedback" *ngIf="formEmpleados.controls['perfil'].errors?.validaSelect">
+                          Seleccione un perfil
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="perfil">Perfil</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-id-badge"></i></span>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formEmpleados.get('sucursal').valid}">
+                    <label for="sucursal">Sucursal</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
+                      </div>
+                      <select id="sucursal" name="sucursal" class="custom-select is-invalid"
+                              formControlName="sucursal">
+                        <option value="">Seleccione una sucursal</option>
+                        <option value="0">Chimesa León</option>
+                        <option value="1">Chimesa Querétaro</option>
+                      </select>
+                      <div class="invalid-feedback" *ngIf="formEmpleados.controls['sucursal'].errors?.validaSelect">
+                          Seleccione una sucursal
+                      </div>
+                    </div>
                   </div>
-                  <select id="perfil" name="perfil" class="form-control">
-                    <option value="0">Vendedor</option>
-                    <option value="1">Comprador</option>
-                  </select>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formEmpleados.get('telefono').valid}">
+                    <label for="telefono">Teléfono</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                      </div>
+                      <input type="tel" id="telefono" name="telefono" class="form-control is-invalid"
+                             formControlName="telefono">
+                      <div class="invalid-feedback" *ngIf="formEmpleados.controls['telefono'].errors?.required">
+                          El número de teléfono es requerido
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formEmpleados.get('correo').valid}">
+                    <label for="correo">Correo</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                      </div>
+                      <input type="text" id="correo" name="correo" class="form-control is-invalid"
+                             formControlName="correo">
+                      <div class="invalid-feedback" *ngIf="formEmpleados.controls['correo'].errors?.required">
+                          El correo es requerido
+                      </div>
+                      <div class="invalid-feedback" *ngIf="formEmpleados.controls['correo'].errors?.required">
+                          El correo no tiene el formato correcto
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="clientes">Clientes</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-users"></i></span>
+                      </div>
+                      <select id="clientes" name="clientes" class="custom-select is-invalid"
+                              >
+                        <option value="">Seleccione un cliente</option>
+                        <option value="0">Kellogs</option>
+                        <option value="1">Pilgrims</option>
+                      </select>
+                      <!-- <div class="invalid-feedback" *ngIf="formEmpleados.controls['clientes'].errors?.required">
+                          Seleccione un cliente
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formEmpleados.get('fechaDeIngreso').valid}">
+                    <label for="fechaDeIngreso">Fecha de ingreso</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                      </div>
+                      <input type="date" id="fechaDeIngreso" name="fechaDeIngreso"
+                             class="form-control is-invalid"
+                             formControlName="fechaDeIngreso">
+                      <div class="invalid-feedback" *ngIf="formEmpleados.controls['fechaDeIngreso'].errors?.required">
+                          Ingrese una fecha válida
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{ 'was-validated': formEmpleados.get('fechaDeBaja').valid}">
+                    <label for="fechaDeBaja">Fecha de baja</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                      </div>
+                      <input type="date" id="fechaDeBaja" name="fechaDeBaja"
+                             class="form-control is-invalid"
+                             formControlName="fechaDeBaja">
+                      <div class="invalid-feedback" *ngIf="formEmpleados.controls['fechaDeBaja'].errors?.required">
+                          Ingrese una fecha válida
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="empleadosModal.hide()">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Agregar perfil</button>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+              </div>
+            </form>
           </div>
-          <div class="row mt-3">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="sucursal">Sucursal</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
-                  </div>
-                  <select id="sucursal" name="sucursal" class="form-control">
-                    <option value="0">Seleccione una sucursal</option>
-                    <option value="0">Chimesa León</option>
-                    <option value="1">Chimesa Querétaro</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
-                  </div>
-                  <input type="tel" id="telefono" name="telefono" class="form-control">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="correo">Correo</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                  </div>
-                  <input type="e" id="correo" name="correo" class="form-control">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="clientes">Clientes</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-users"></i></span>
-                  </div>
-                  <select id="clientes" name="clientes" class="form-control">
-                    <option value="0">Seleccione un cliente</option>
-                    <option value="0">Kellogs</option>
-                    <option value="1">Pilgrims</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="fechaDeIngreso">Fecha de ingreso</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                  </div>
-                  <input type="date" id="fechaDeIngreso" name="fechaDeIngreso" class="form-control" value="2019-03-25">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="fechaDeBaja">Fecha de baja</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                  </div>
-                  <input type="date" id="fechaDeBaja" name="fechaDeBaja" class="form-control">
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="empleadosModal.hide()">Cerrar</button>
-        <button type="button" class="btn btn-primary">Agregar perfil</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
+        </div>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
