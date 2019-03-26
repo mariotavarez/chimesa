@@ -63,7 +63,7 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-md-12">
-            <form>
+            <form  (ngSubmit)="guardarPerfil()" [formGroup]="formPerfil" novalidate="novalidate">
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
@@ -73,7 +73,7 @@
                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                       </div>
                       <input type="text" id="nombre" name="nombre" class="form-control"
-                        placeholder="Nombre del perfil">
+                        placeholder="Nombre del perfil" formControlName="nombre">
                     </div>
                   </div>
                 </div>
@@ -139,14 +139,14 @@
                   </div>
                 </div>
               </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="perfilModal.hide()">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Agregar perfil</button>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+              </div>
             </form>
           </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="perfilModal.hide()">Cerrar</button>
-        <button type="button" class="btn btn-primary">Agregar perfil</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

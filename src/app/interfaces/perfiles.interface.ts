@@ -1,5 +1,5 @@
 export interface PerfilesInterface {
     id$?: string;
-    permisos: [];
+    permisos?: [];
     nombre: string;
 }

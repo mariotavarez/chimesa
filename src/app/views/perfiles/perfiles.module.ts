@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Alert Component
 import { AlertModule } from 'ngx-bootstrap/alert';
@@ -23,7 +24,9 @@ import { PerfilesRoutingModule } from './perfiles-routing.module';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     PerfilesRoutingModule,
+    ReactiveFormsModule,
     AlertModule.forRoot(),
     ModalModule.forRoot()
   ]
