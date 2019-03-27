@@ -19,6 +19,10 @@ import { SucursalesRoutingModule } from './sucursales-routing.module';
 // Forms
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+// Toastr
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     SucursalesComponent,
@@ -29,6 +33,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     SucursalesRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    ToastrModule.forRoot(),
     AlertModule.forRoot(),
     ModalModule.forRoot()
   ]

@@ -54,6 +54,7 @@ export class SucursalesComponent implements OnInit {
     // console.log(this.formSucursales.value);
     // console.log(this.formSucursales);
     console.log(this.formSucursales.get('status'));
+    
   }
 
   // Valida que se haya seleccionado un estatus

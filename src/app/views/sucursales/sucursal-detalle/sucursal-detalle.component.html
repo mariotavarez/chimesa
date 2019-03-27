@@ -6,7 +6,7 @@
         <div class="card-header">
           <div class="row">
             <div class="col-sm-5">
-              <h5 class="card-title mb-0">Detalle de sucursal</h5>
+              <h5 class="card-title mb-0">Detalle {{ sucursalData.nombre }}</h5>
             </div>
 
             <div class="col-sm-7 d-md-block">
@@ -28,75 +28,90 @@
           <div class="row">
             <div class="col-md-12">
               <form [formGroup]="formSucursales">
-                <div class="row mt-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="nombre">Nombre de la sucursal</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
+                <div>
+                  <div class="row mt-3">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="nombre">Nombre de la sucursal</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
+                          </div>
+                          <input type="text" id="nombre" name="nombre" 
+                                 class="form-control" formControlName="nombre"
+                                 [value]="sucursal.nombre">
                         </div>
-                        <input type="text" id="nombre" name="nombre" class="form-control" formControlName="nombre">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                          </div>
+                          <input type="text" id="telefono" name="telefono" 
+                                 class="form-control" formControlName="telefono"
+                                 [value]="sucursal.telefono">
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="telefono">Teléfono</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                  <div class="row mt-3">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="responsable">Responsable</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                          </div>
+                          <input type="text" id="responsable" name="responsable" 
+                                 class="form-control" formControlName="responsable"
+                                 [value]="sucursal.responsable">
                         </div>
-                        <input type="text" id="telefono" name="telefono" class="form-control" formControlName="telefono">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                          </div>
+                          <input type="text" id="correo" name="correo" 
+                                 class="form-control" formControlName="correo"
+                                 [value]="sucursal.correo">
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="responsable">Responsable</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="fa fa-user"></i></span>
+                  <div class="row mt-3">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="status">Estatus</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-list-alt"></i></span>
+                          </div>
+                          <input type="text" id="status" name="status" 
+                                 class="form-control" formControlName="status"
+                                 [value]="sucursal.status">
                         </div>
-                        <input type="text" id="responsable" name="responsable" class="form-control" formControlName="responsable">
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="correo">Correo</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                          </div>
+                          <textarea class="form-control" id="direccion" 
+                                    name="direccion" rows="2"
+                                    formControlName="direccion"
+                                    [value]="sucursal.direccion">
+                          </textarea>
                         </div>
-                        <input type="text" id="correo" name="correo" class="form-control" formControlName="correo">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="status">Estatus</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="fa fa-list-alt"></i></span>
-                        </div>
-                        <input type="text" id="status" name="status" class="form-control" formControlName="status">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="direccion">Dirección</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
-                        </div>
-                        <textarea class="form-control" id="direccion" name="direccion" rows="2"
-                        placeholder="Dirección" formControlName="direccion"></textarea>
                       </div>
                     </div>
                   </div>
@@ -122,86 +137,96 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="formSucursalesModal" (ngSubmit)="guardaSucursalModal()" >
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="nombre">Nombre de la sucursal</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
+          <div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="nombre">Nombre de la sucursal</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-shopping-cart"></i></span>
+                    </div>
+                    <input type="text" id="nombre" name="nombre" 
+                           class="form-control is-invalid" placeholder="Ingrese el nombre de la sucursal" 
+                           formControlName="nombre" [value]="sucursal.nombre">
                   </div>
-                  <input type="text" id="nombre" name="nombre" class="form-control"
-                    placeholder="Ingrese el nombre de la sucursal" formControlName="nombre">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                    </div>
+                    <input type="text" id="telefono" name="telefono" 
+                           class="form-control is-invalid" placeholder="Ingrese el número de teléfono" 
+                           formControlName="telefono" [value]="sucursal.telefono">
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="correo">Correo</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                    </div>
+                    <input type="email" id="correo" name="correo" 
+                           class="form-control is-invalid" placeholder="Ingrese el correo electrónico" 
+                           formControlName="correo" [value]="sucursal.correo">
                   </div>
-                  <input type="text" id="telefono" name="telefono" class="form-control"
-                    placeholder="Ingrese el número de teléfono" formControlName="telefono">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="responsable">Responsable</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <select id="responsable" name="responsable" 
+                            class="custom-select is-invalid" formControlName="responsable">
+                      <option value="">Seleccione un responsable</option>
+                      <option [value]="sucursal.responsable">{{ sucursal.responsable }}</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="correo">Correo</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="status">Estatus</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-list-alt"></i></span>
+                    </div>
+                    <select id="status" name="status" 
+                            class="custom-select is-invalid" formControlName="status"
+                            [value]="sucursal.status">
+                      <option value="">Seleccione el tipo de estatus</option>
+                      <option value="Activo">Activo</option>
+                      <option value="Inactivo">Inactivo</option>
+                    </select>
                   </div>
-                  <input type="email" id="correo" name="correo" class="form-control"
-                    placeholder="Ingrese el correo electrónico" formControlName="correo">
                 </div>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="responsable">Responsable</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="direccion">Dirección</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                    </div>
+                    <textarea class="form-control is-invalid" id="direccion" 
+                              name="direccion" rows="2"
+                              placeholder="Dirección" formControlName="direccion"
+                              [value]="sucursal.direccion">
+                    </textarea>
                   </div>
-                  <select id="responsable" name="responsable" class="form-control" formControlName="responsable">
-                    <option value="">Seleccione un responsable</option>
-                    <option value="Juan Pérez">Juan Pérez</option>
-                    <option value="Roberto López">Roberto López</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="status">Estatus</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-list-alt"></i></span>
-                  </div>
-                  <select id="status" name="status" class="form-control" formControlName="status">
-                    <option value="">Seleccione el tipo de estatus</option>
-                    <option value="Activo">Activo</option>
-                    <option value="Inactivo">Inactivo</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="direccion">Dirección</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
-                  </div>
-                  <textarea class="form-control" id="direccion" name="direccion" rows="2"
-                    placeholder="Dirección" formControlName="direccion"></textarea>
                 </div>
               </div>
             </div>
